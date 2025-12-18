@@ -411,7 +411,11 @@ export function Sala() {
     return (
       <div className="min-h-screen flex items-center justify-center p-4">
         <div className="text-center space-y-4">
-          <div className="text-6xl animate-bounce-slow">🎁</div>
+          <img 
+            src="https://img.icons8.com/?size=100&id=S8xAiqv9WRp0&format=png&color=000000" 
+            alt="Gift Icon" 
+            className="w-20 h-20 mx-auto animate-bounce-slow drop-shadow-2xl"
+          />
           <h2 className="text-2xl font-bold text-slate-100">Carregando sala...</h2>
           <div className="flex gap-2 justify-center">
             <div className="w-3 h-3 bg-primary rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
@@ -449,7 +453,11 @@ export function Sala() {
       <div className="min-h-screen flex items-center justify-center p-4">
         <div className="max-w-md w-full space-y-6">
           <div className="text-center space-y-2">
-            <h1 className="text-4xl font-bold">🎁</h1>
+            <img 
+              src="https://img.icons8.com/?size=100&id=S8xAiqv9WRp0&format=png&color=000000" 
+              alt="Gift Icon" 
+              className="w-16 h-16 mx-auto drop-shadow-2xl"
+            />
             <h2 className="text-2xl font-bold text-slate-100">
               Entrar na Sala
             </h2>
@@ -493,7 +501,11 @@ export function Sala() {
         {/* Header */}
         <div className="text-center space-y-2 sm:space-y-3">
           <div className="relative inline-block">
-            <h1 className="text-4xl sm:text-6xl animate-bounce-slow">🎁</h1>
+            <img 
+              src="https://img.icons8.com/?size=100&id=S8xAiqv9WRp0&format=png&color=000000" 
+              alt="Gift Icon" 
+              className="w-16 h-16 sm:w-20 sm:h-20 mx-auto animate-bounce-slow drop-shadow-xl"
+            />
             <div className="absolute -top-1 -right-1 text-xl sm:text-2xl animate-spin-slow">✨</div>
           </div>
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent px-4">
