@@ -110,6 +110,7 @@ export function Sala() {
               setMeuAmigoSecreto(payload.new.amigo_secreto)
             }
           } else if (payload.eventType === 'DELETE') {
+            console.log('🔴 DELETE detectado:', payload.old) // Debug
             setParticipantes(prev => {
               const participante = prev.find(p => p.id === payload.old.id)
               if (participante && participante.id !== meuId) {
@@ -365,11 +366,19 @@ export function Sala() {
     setIsSaindo(true)
 
     try {
-      await supabase.from('participantes').delete().eq('id', meuId)
+      // Deletar participante e aguardar confirmação
+      const { error } = await supabase.from('participantes').delete().eq('id', meuId)
+      
+      if (error) throw error
+      
+      // Aguardar um pouco para o Realtime propagar
+      await new Promise(resolve => setTimeout(resolve, 300))
+      
       setToast('👋 Você saiu da sala')
-      setTimeout(() => navigate('/'), 1000)
+      setTimeout(() => navigate('/'), 800)
     } catch (error) {
       console.error('Erro ao sair:', error)
+      alert('Erro ao sair da sala. Tente novamente.')
       setIsSaindo(false)
     }
   }
